@@ -12,7 +12,7 @@ const balanceValue = document.getElementById("balance-amount");
 const list = document.getElementById("list");
 let tempAmount = 0;
 
-//Set Budget Part
+//Set Income Part
 totalAmountButton.addEventListener("click", () => {
   tempAmount = totalAmount.value;
   //empty or negative input
@@ -92,7 +92,7 @@ checkAmountButton.addEventListener("click", () => {
   //Total expense (existing + new)
   let sum = parseInt(expenditureValue.innerText) + expenditure;
   expenditureValue.innerText = sum;
-  //Total balance(budget - total expense)
+  //Total balance(income - total expense)
   const totalBalance = tempAmount - sum;
   balanceValue.innerText = totalBalance;
   //Create list
@@ -101,3 +101,44 @@ checkAmountButton.addEventListener("click", () => {
   productTitle.value = "";
   userAmount.value = "";
 });
+
+// Get the Export Button
+const exportDataButton = document.getElementById('export-data');
+
+// Function to convert data to CSV format
+function exportToCSV(data, filename) {
+  let csv = 'Product,Amount\n'; // CSV header
+  data.forEach(row => {
+    csv += `${row.product},${row.amount}\n`;
+  });
+
+  // Create a blob and a link to download the CSV file
+  let csvBlob = new Blob([csv], { type: 'text/csv' });
+  let csvUrl = URL.createObjectURL(csvBlob);
+  let link = document.createElement('a');
+  link.href = csvUrl;
+  link.download = `${filename}.csv`;
+  
+  // Trigger download
+  link.click();
+}
+
+// Function to collect expense data and export
+exportDataButton.addEventListener('click', () => {
+  const expenseData = [];
+  const listItems = document.querySelectorAll('.sublist-content');
+  
+  // Loop through all list items to extract product name and amount
+  listItems.forEach(item => {
+    const product = item.querySelector('.product').innerText;
+    const amount = item.querySelector('.amount').innerText;
+    expenseData.push({ product, amount });
+  });
+
+  // Call exportToCSV function with data
+  exportToCSV(expenseData, 'expense_data');
+});
+
+// Existing code for income and expenses
+
+
