@@ -1,11 +1,9 @@
-/* Reset default styles */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Landing page section styles */
 .landing-page-section {
     display: flex;
     align-items: center;
@@ -16,7 +14,6 @@ body {
     padding: 20px 0;
 }
 
-/* Image container styles */
 .image-div {
     max-width: 50%;
 }
@@ -27,7 +24,6 @@ body {
     object-fit: cover;
 }
 
-/* Content container styles */
 .content-div {
     display: flex;
     flex-direction: column;
@@ -67,7 +63,6 @@ body {
     color: #c45959;
 }
 
-/* Tablet devices (768px and down) */
 @media screen and (max-width: 768px) {
     .landing-page-section {
         flex-direction: column;
@@ -100,7 +95,6 @@ body {
     }
 }
 
-/* Mobile devices (480px and down) */
 @media screen and (max-width: 480px) {
     .landing-page-section {
         margin: 0 5px;
@@ -120,7 +114,6 @@ body {
     }
 }
 
-/* Handle very small devices */
 @media screen and (max-width: 320px) {
     .content-div h1 {
         font-size: 2rem;
@@ -130,3 +123,208 @@ body {
         height: 40vh;
     }
 }
+
+/* Tracker CSS Code Start */
+.wrapper {
+    width: 90%;
+    font-size: 16px;
+    max-width: 43.75em;
+    margin: 1em auto;
+  }
+  .container {
+    width: 100%;
+  }
+  .sub-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  .flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .wrapper h3 {
+    color: #363d55;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+  }
+  .container input {
+    display: block;
+    width: 100%;
+    padding: 0.6em 0.3em;
+    border: 1px solid #d0d0d0;
+    border-radius: 0.3em;
+    color: #414a67;
+    outline: none;
+    font-weight: 400;
+    margin-bottom: 0.6em;
+  }
+  .container input:focus {
+    border-color: #587ef4;
+  }
+  .total-amount-container,
+  .user-amount-container {
+    background-color: #e7dede;
+    padding: 1.25em 0.9em;
+    border-radius: 0.3em;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  }
+  .output-container {
+    background-color: #2C3E50;
+    color: #ffffff;
+    border-radius: 0.3em;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    margin: 2em 0;
+    padding: 1.2em;
+    cursor: pointer;
+  }
+  .output-container p {
+    font-weight: 500;
+    margin-bottom: 0.6em;
+  }
+  .output-container span {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    color: #e5e5e5;
+  }
+  .submit {
+    font-size: 1em;
+    margin-top: 0.8em;
+    background-color: #c45959;
+    color: #2C3E50;
+    border: none;
+    outline: none;
+    padding: 0.6em 1.2em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .submit:hover{
+    background-color: #2C3E50;
+    color: #c45959;
+  }
+  .list {
+    background-color: #e7dede;
+    padding: 1.8em 1.2em;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    border-radius: 0.6em;
+    color: #2C3E50;
+  }
+  .sublist-content {
+    width: 100%;
+    border-left: 0.3em solid #587ef4;
+    margin-bottom: 0.6em;
+    padding: 0.5em 1em;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr;
+  }
+  .product {
+    font-weight: 500;
+    color: #363d55;
+  }
+  .amount {
+    color: #414a67;
+    margin-left: 20%;
+  }
+  .icons-container {
+    width: 5em;
+    margin: 1.2em;
+    align-items: center;
+  }
+  .product-title {
+    margin-bottom: 1em;
+  }
+  .hide {
+    display: none;
+  }
+  .error {
+    color: #ff465a;
+  }
+  .edit {
+    margin-left: auto;
+  }
+  .edit,
+  .delete {
+    background: transparent;
+    cursor: pointer;
+    margin-right: 1.5em;
+    border: none;
+    color: #587ef4;
+  }
+  @media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .wrapper {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .sub-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sublist-content {
+        grid-template-columns: 1.5fr 1fr auto auto;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sublist-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .edit,
+    .delete {
+        padding: 0.25rem;
+    }
+
+    .product {
+        grid-column: 1 / -1;
+    }
+
+    .amount {
+        text-align: left;
+    }
+
+    .output-container span {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    .wrapper {
+        width: 98%;
+    }
+
+    .submit {
+        padding: 0.5rem 1rem;
+    }
+    .output-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .list-container{
+        font-size: 1.2rem;
+    }
+}
+  
+/* Tracker CSS Code Ends */
