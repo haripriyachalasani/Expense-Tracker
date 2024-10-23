@@ -1,0 +1,132 @@
+/* Reset default styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Landing page section styles */
+.landing-page-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 20px;
+    padding: 20px 0;
+}
+
+/* Image container styles */
+.image-div {
+    max-width: 50%;
+}
+
+.image-div img {
+    height: 100vh;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Content container styles */
+.content-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 20px;
+    max-width: 50%;
+}
+
+.content-div h1 {
+    color: #c45959;
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.content-div p {
+    text-align: end;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.content-div button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #c45959;
+    color: #2C3E50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content-div button:hover {
+    background-color: #2C3E50;
+    color: #c45959;
+}
+
+/* Tablet devices (768px and down) */
+@media screen and (max-width: 768px) {
+    .landing-page-section {
+        flex-direction: column;
+        margin: 0 10px;
+    }
+
+    .image-div, .content-div {
+        max-width: 100%;
+    }
+
+    .image-div img {
+        height: 50vh;
+        width: 100%;
+    }
+
+    .content-div {
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .content-div h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    .content-div p {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile devices (480px and down) */
+@media screen and (max-width: 480px) {
+    .landing-page-section {
+        margin: 0 5px;
+    }
+
+    .content-div h1 {
+        font-size: 2.8rem;
+    }
+
+    .content-div p {
+        font-size: 1rem;
+    }
+
+    .content-div button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Handle very small devices */
+@media screen and (max-width: 320px) {
+    .content-div h1 {
+        font-size: 2rem;
+    }
+
+    .image-div img {
+        height: 40vh;
+    }
+}
